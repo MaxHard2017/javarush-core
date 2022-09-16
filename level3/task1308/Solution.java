@@ -13,7 +13,7 @@ package level3.task1308;
             •            Интерфейс Presentable должен наследоваться от интерфейса Person.
             •            В интерфейсе Person должен быть объявлен метод isAlive.
             •            Тип возвращаемого значения метода isAlive может иметь только два значения.
- */
+
 public class Solution {
     public static void main(String[] args) throws Exception {
         interface Person {
@@ -27,3 +27,4 @@ public class Solution {
     }
 
 }
+ */
