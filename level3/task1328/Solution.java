@@ -1,11 +1,10 @@
 package level3.task1328;
-
 /* 
 Битва роботов
 */
 
 public class Solution {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         Robot amigo = new Robot("Амиго");
         Robot enemy = new Robot("Сгибальщик-02");
 
