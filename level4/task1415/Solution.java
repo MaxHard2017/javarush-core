@@ -2,8 +2,6 @@ package level4.task1415;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
 /*
  *  Реализовать метод cleanAllApartments().
     Пройтись по списку объектов apartments:
