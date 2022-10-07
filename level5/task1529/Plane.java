@@ -1,7 +1,5 @@
 package level5.task1529;
 
-import java.security.PublicKey;
-
 public class Plane implements CanFly {
     private int passengersNumber;
     @Override
@@ -9,4 +7,7 @@ public class Plane implements CanFly {
     Plane(int passengersNumber) {
         this.passengersNumber = passengersNumber;
     }
+    public int getPassengersNumber() {
+        return passengersNumber;
+    }   
 }
