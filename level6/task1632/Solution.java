@@ -93,7 +93,7 @@ public class Solution {
                      sleep(100);
                 }
             }catch (InterruptedException e) {
-                e.printStackTrace();
+                System.out.println("InterruptedException");
             }
             System.out.println(Thread.currentThread().getName() + " is stopping...");
         }
@@ -104,8 +104,8 @@ public class Solution {
         public void run() {
             try {
                 while (true) {
-                    System.out.println("Ура");
                     sleep(1000);
+                    System.out.println("Ура");
                 }
             }catch (InterruptedException e) { }
             System.out.println(Thread.currentThread().getName() + " is stopping...");
