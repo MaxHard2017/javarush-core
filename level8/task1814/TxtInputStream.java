@@ -23,26 +23,26 @@ public class TxtInputStream extends FileInputStream {
     public TxtInputStream(String fileName) throws IOException, UnsupportedFileNameException {
         super(fileName);
 
-        // int dotIndex = fileName.lastIndexOf(".");
-        // if ( fileName.length() - dotIndex > 3
-        //     !(fileName.substring(dotIndex + 1, dotIndex + 4)).equals("txt") ) {
-        //     super.close();
-        //     throw new UnsupportedFileNameException();
-        // } 
+        int dotIndex = fileName.lastIndexOf(".");
+        if ( ( fileName.length() - dotIndex < 4) 
+        || !(fileName.substring(dotIndex + 1, dotIndex + 4)).equals("txt") ) {
+            super.close();
+            throw new UnsupportedFileNameException();
+        } 
     }
 
     public static void main(String[] args) throws UnsupportedFileNameException{
-        String fileName = "c:/test/.fdsasd.tt";
-        int dotIndex = fileName.lastIndexOf(".");
+        // String fileName = "c:/test/.fdsasd.tt";
+        // int dotIndex = fileName.lastIndexOf(".");
 
-        if ( ( fileName.length() - dotIndex < 4) 
-                || !(fileName.substring(dotIndex + 1, dotIndex + 4)).equals("txt") ) {
-            throw new UnsupportedFileNameException();
-        } 
+        // if ( ( fileName.length() - dotIndex < 4) 
+        //         || !(fileName.substring(dotIndex + 1, dotIndex + 4)).equals("txt") ) {
+        //     throw new UnsupportedFileNameException();
+        // } 
 
-        System.out.println(fileName.substring(dotIndex + 1, dotIndex + 4));
-        System.out.println(fileName.length() - dotIndex );
-        System.out.println("txt".length());
+        // System.out.println(fileName.substring(dotIndex + 1, dotIndex + 4));
+        // System.out.println(fileName.length() - dotIndex );
+        // System.out.println("txt".length());
     }
 }
 
