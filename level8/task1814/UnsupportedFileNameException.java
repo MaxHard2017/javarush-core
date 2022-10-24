@@ -1,0 +1,5 @@
+package level8.task1814;
+
+public class UnsupportedFileNameException extends Exception{
+    
+}
