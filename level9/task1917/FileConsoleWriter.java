@@ -10,7 +10,7 @@ import java.io.IOException;
 */
 
 public class FileConsoleWriter {
-    private FileWriter fileWriter;
+    private FileWriter fileWriter;  
 
     public FileConsoleWriter(File file) throws IOException {
         this.fileWriter = new FileWriter(file);
