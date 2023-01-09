@@ -23,22 +23,24 @@ import java.util.List;
 */
 
 public class Solution {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //исправьте outputStream/inputStream в соответствии с путем к вашему реальному файлу
+        OutputStream outputStream = null;
+        InputStream inputStream = null;
         try {
              File your_file_name = File.createTempFile("your_file_name", null);
-             OutputStream outputStream = new FileOutputStream(your_file_name);
-             InputStream inputStream = new FileInputStream(your_file_name);
-            // OutputStream outputStream = new FileOutputStream("c://test/human.txt");
-            // InputStream inputStream = new FileInputStream("c://test/human.txt");
+            //  OutputStream outputStream = new FileOutputStream(your_file_name);
+            //  InputStream inputStream = new FileInputStream(your_file_name);
+            outputStream = new FileOutputStream("c://test/human.txt");
+            inputStream = new FileInputStream("c://test/human.txt");
 
-            Human ivanov = new Human("Ivanov", new Asset("home", 999_999.99), new Asset("car", 2999.99));
+            Human ivanov = new Human("Petroff123", new Asset("home", 999_999.99), new Asset("car", 2999.99));
             ivanov.save(outputStream);
             outputStream.flush();
 
             Human somePerson = new Human();
             somePerson.load(inputStream);
-            inputStream.close();
+            
             //check here that ivanov equals to somePerson - проверьте тут, что ivanov и somePerson равны
 
         } catch (IOException e) {
@@ -47,8 +49,14 @@ public class Solution {
         } catch (Exception e) {
             //e.printStackTrace();
             System.out.println("Oops, something wrong with save/load method");
+        } finally {
+            if (inputStream != null) {
+                inputStream.close();
+                outputStream.close();
+                System.out.println("Done!");
+            }
         }
-    }
+    } 
 
     public static class Human {
         public String name;
