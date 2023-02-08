@@ -27,11 +27,11 @@ package level10.task2027;
     public class Solution {
         public static void main(String[] args) {
             int[][] crossword = new int[][]{
-                    {'m', 'o', 'm'},
-                    {'m', 'o', 'm'},
-                    {'m', 'o', 'm'}                    
+                    {'i', 'i', 'i'},
+                    {'i', 'o', 'i'},
+                    {'i', 'i', 'i'}
             };
-            List<Word> w = detectAllWords(crossword, "mom");
+            List<Word> w = detectAllWords(crossword, "oi");
             System.out.println("total words count:" + w.size());
             System.out.println(w);
 
