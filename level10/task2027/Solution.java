@@ -25,6 +25,9 @@ package level10.task2027;
     */
 
     public class Solution {
+
+        static int count = 0;
+
         public static void main(String[] args) {
             int[][] crossword = new int[][]{
                     {'i', 'i', 'i'},
@@ -35,6 +38,8 @@ package level10.task2027;
             System.out.println("total words count:" + w.size());
             System.out.println(w);
 
+            System.out.print(count);
+
             /*
                 Ожидаемый результат
                 home - (5, 3) - (2, 0)
@@ -44,6 +49,7 @@ package level10.task2027;
 
         public static List<Word> detectAllWords(int[][] crossword, String... words) {
             List<Word> allWords = new ArrayList<>();
+            
 
             for (String word : words) {
                 for (int j = 0; j < crossword.length; j++) {
@@ -56,6 +62,8 @@ package level10.task2027;
                         dioganalWordNw(crossword, i, j, word, allWords);
                         dioganalWordSw(crossword, i, j, word, allWords);
                         dioganalWordSe(crossword, i, j, word, allWords);
+
+                        count++;
                     }
                     
                 }
