@@ -1,0 +1,42 @@
+package level1.test;
+
+import java.io.*;
+
+/* 
+Код не компилится…
+*/
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        String sourceFileName = reader.readLine();
+        String destinationFileName = reader.readLine();
+
+        InputStream fileInputStream = getInputStream(sourceFileName);
+        OutputStream fileOutputStream = getOutputStream(destinationFileName);
+        BufferedInputStream bis = new BufferedInputStream(fileInputStream);
+        BufferedOutputStream bos = new BufferedOutputStream(fileOutputStream);
+
+        int count = 0;
+        while (bis.available() > 0) {
+            int data = bis.read();
+            bos.write(data);
+            count++;
+            System.out.println(count);
+        }
+
+        System.out.println("Скопировано байт " + count);
+
+        fileInputStream.close();
+        fileOutputStream.close();
+    }
+
+    public static InputStream getInputStream(String fileName) throws IOException {
+        return new FileInputStream(fileName);
+    }
+
+    public static OutputStream getOutputStream(String fileName) throws IOException {
+        return new FileOutputStream(fileName);
+    }
+}
